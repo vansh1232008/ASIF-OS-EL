@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tags and CSS links -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Comprehensive documentation for OS Virtual Lab's CPU Scheduling Simulator. Learn about CPU Scheduling, its importance, and various algorithms used.">
+    <meta name="keywords" content="CPU Scheduling, Operating Systems, Documentation, OS Virtual Lab, Scheduling Algorithms, Multithreading, Multiprocessing">
+    <meta name="author" content="Your Name">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Slick Carousel CSS (if needed) -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./docs.css">
+    <link rel="stylesheet" href="./explanation.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Documentation - OS Virtual Lab</title>
+</head>
+
+<body>
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+
+    <!-- Header Section -->
+    <header class="sub-header" id="home">
+        <nav>
+            <a href="./index.html" class="logo">OS LAB</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times close-btn" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./docs.html" class="active">DOCS</a></li>
+                    <li><a href="./backend/ganttcharts.html">SIMULATOR</a></li>
+                    <li><a href="./about.html">ABOUT</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars menu-btn" onclick="showMenu()"></i>
+        </nav>
+        <div class="header-content">
+            <h1>Documentation</h1>
+            <p>Comprehensive guides and information about CPU Scheduling Algorithms.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Documentation Sections -->
+        <section class="documentation" id="documentation">
+            <h2>What is CPU Scheduling?</h2>
+            <div class="container_docs">
+                <h3>Definition</h3>
+                <p>CPU Scheduling is a process of determining which process will own the CPU for execution while another process is on hold. The main task of CPU scheduling is to ensure that whenever the CPU remains idle, the OS selects one of the processes available in the ready queue for execution. The selection process is carried out by the CPU scheduler, which selects one of the processes in memory that are ready for execution.</p>
+            </div>
+
+            <div class="container_docs" data-aos="zoom-in-up">
+                <h3>Why CPU Scheduling?</h3>
+                <p>A typical process involves both I/O time and CPU time. In a uniprogramming system like MS-DOS, time spent waiting for I/O is wasted, and the CPU remains idle during this time. In multiprogramming systems, one process can use the CPU while another is waiting for I/O, which is possible only with effective process scheduling.</p>
+                <ul>
+                    <strong>Objectives of Process Scheduling Algorithm:</strong>
+                    <li>Maximize CPU utilization [Keep CPU as busy as possible]</li>
+                    <li>Fair allocation of CPU</li>
+                    <li>Maximize throughput [Number of processes that complete their execution per time unit]</li>
+                    <li>Minimize turnaround time [Time taken by a process to finish execution]</li>
+                    <li>Minimize waiting time [Time a process waits in the ready queue]</li>
+                    <li>Minimize response time [Time when a process produces its first response]</li>
+                </ul>
+            </div>
+
+            <!-- Important Terminologies -->
+            <div class="container_docs" data-aos="zoom-in-up">
+                <h3>Important Terminologies</h3>
+                <ul>
+                    <li><strong>CPU Burst Time:</strong> The time required by a process for its execution on the CPU.</li>
+                    <li><strong>Waiting Time:</strong> The total time a process has been in the ready queue waiting for CPU allocation.</li>
+                    <li><strong>Turnaround Time:</strong> The total time taken from the submission of a process to its completion.</li>
+                    <li><strong>Response Time:</strong> The time from the submission of a request until the first response is produced.</li>
+                </ul>
+            </div>
+
+            <!-- Types of CPU Scheduling Algorithms -->
+            <div class="container_docs" data-aos="zoom-in-up">
+                <h3>Types of CPU Scheduling Algorithms</h3>
+                <ul>
+                    <li><strong>First-Come, First-Served (FCFS):</strong> The simplest scheduling algorithm where the process that arrives first gets executed first.</li>
+                    <li><strong>Shortest Job Next (SJN):</strong> Selects the process with the smallest execution time.</li>
+                    <li><strong>Priority Scheduling:</strong> Each process is assigned a priority, and the process with the highest priority is executed first.</li>
+                    <li><strong>Round Robin (RR):</strong> Each process is assigned a fixed time slice in a cyclic order.</li>
+                    <li><strong>Multilevel Queue Scheduling:</strong> Processes are divided into different queues based on priority or type, and each queue has its own scheduling algorithm.</li>
+                </ul>
+            </div>
+
+            <!-- Scheduling Criteria -->
+            <div class="container_docs" data-aos="zoom-in-up">
+                <h3>Scheduling Criteria</h3>
+                <p>Different scheduling algorithms aim to optimize various criteria that define the "goodness" of the scheduling technique. Some key criteria include:</p>
+                <ul>
+                    <li><strong>CPU Utilization:</strong> Ensuring the CPU is kept as busy as possible by minimizing idle time.</li>
+                    <li><strong>Throughput:</strong> Maximizing the number of processes that complete their execution in a given time frame.</li>
+                    <li><strong>Turnaround Time:</strong> Minimizing the total time taken for a process from submission to completion.</li>
+                    <li><strong>Waiting Time:</strong> Reducing the time a process spends in the ready queue before execution starts.</li>
+                    <li><strong>Response Time:</strong> Shortening the time from request submission until the first output is produced, crucial for interactive systems.</li>
+                    <li><strong>Fairness:</strong> Ensuring no single process faces indefinite postponement and that all processes get a fair share of CPU time.</li>
+                </ul>
+            </div>
+
+            <!-- Real-Time Scheduling -->
+            <div class="container_docs" data-aos="zoom-in-up">
+                <h3>Real-Time Scheduling</h3>
+                <p>Real-time systems require that tasks be completed within strict timing constraints, often called deadlines. Unlike general-purpose systems, where average performance metrics like throughput and waiting time are important, real-time scheduling focuses on predictability and meeting these critical deadlines:</p>
+                <ul>
+                    <li><strong>Hard Real-Time Systems:</strong> Missing a deadline could lead to catastrophic consequences, so tasks must be guaranteed to complete by their deadlines.</li>
+                    <li><strong>Soft Real-Time Systems:</strong> Deadlines are important, but occasional misses may be tolerable, though they degrade system performance.</li>
+                    <li><strong>Common Real-Time Scheduling Algorithms:</strong> 
+                        <ul class="special">
+                            <li><strong>Rate Monotonic (RM):</strong> A static priority algorithm where tasks with shorter periods get higher priority.</li>
+                            <li><strong>Earliest Deadline First (EDF):</strong> A dynamic priority algorithm where tasks closest to their deadlines have the highest priority.</li>
+                            <li><strong>Least Laxity First (LLF):</strong> Prioritizes tasks with the least "slack" time, focusing on tasks running out of time faster.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Real-time scheduling ensures that time-critical processes receive the necessary processor time to maintain system correctness and reliability.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p style="text-transform: uppercase; text-align: center;">
+           <br>
+            TEAMMATES: MD ASIF ALI, KAIZER DEWASWALA
+        </p>
+    </footer>
+    
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3HhiwGLnYFDsC1qmhs/4c+6tcJOjoP1t+Xb38"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgY3uE02H9c0iwLfzQID/j7YB1SCKb19Q/H9gGKg"
+        crossorigin="anonymous"></script>
+    <!-- Slick Carousel JS (if needed) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        var menuBtn = document.querySelector(".menu-btn");
+        var closeBtn = document.querySelector(".close-btn");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-250px";
+        }
+
+        // Close menu when clicking outside
+        window.addEventListener('click', function (e) {
+            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                hideMenu();
+            }
+        });
+
+        // Initialize AOS
+        AOS.init({
+            offset: 200,
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+        });
+
+        // Smooth Scrolling for Internal Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (navLinks.style.right === "0px") {
+                    hideMenu();
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        const toggle = document.getElementById('toggle');
+        toggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+
+</html>

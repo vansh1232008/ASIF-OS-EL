@@ -1,0 +1,289 @@
+/* Updated CSS with new color scheme */
+
+/* Makes sure the cursor is pointer on all dropdown menu buttons */
+a {
+  cursor: pointer;
+}
+
+/* Prevents everything besides input field from being highlighted */
+*:not(input) {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Use regular cursor when hovering over paragraphs, since text can't be highlighted */
+p:hover, h2:hover {
+  cursor: default;
+}
+
+/* Indent input form text for better visual alignment */
+.form-control {
+  text-indent: 8px;
+}
+
+/* Limit input field width */
+.input-group {
+  max-width: 200px;
+}
+
+/* Progress bar styles with updated colors */
+.progress .progress-bar {
+  font-size: 13px;
+  line-height: 21px;
+}
+.progress-bar-idle {
+  background-color: #e0e0e0;
+}
+
+.progress-bar-context {
+  background-color: #333333;
+}
+
+.progress-bar-first {
+  background-color: #4caf50;
+}
+
+.progress-bar-second {
+  background-color: #ff9800;
+}
+
+.progress-bar-third {
+  background-color: #9c27b0;
+}
+
+.progress-bar-fourth {
+  background-color: #00bcd4;
+}
+
+.progress-bar-fifth {
+  background-color: #e91e63;
+}
+
+.progress-bar-sixth {
+  background-color: #3f51b5;
+}
+
+.progress-bar-seventh {
+  background-color: #f44336;
+}
+
+.progress-bar-eighth {
+  background-color: #673ab7;
+}
+
+.progress-bar-ninth {
+  background-color: #795548;
+}
+
+.progress-bar-tenth {
+  background-color: #009688;
+}
+
+.input-number {
+  text-indent: 0px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+table input {
+  display: block !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  line-height: 1 !important;
+}
+
+table input:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+#outputTable th,
+#outputTable td {
+  padding: 10px !important;
+  color: #212121;
+}
+
+td {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.table-left-heading {
+  min-width: 90px !important;
+}
+
+.ruler, .ruler li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  box-sizing: content-box;
+}
+
+.ruler {
+  border-radius: 2px;
+  margin: 0;
+  height: 0em;
+  padding-right: 1cm;
+  white-space: nowrap;
+}
+
+.ruler li {
+  width: 2em;
+  margin: 0.5em -1em -1em;
+  text-align: center;
+  position: relative;
+}
+
+.pie-legend li span {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.table-legend {
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.pie-legend {
+  list-style: none;
+}
+
+.ruler li:before {
+  content: '';
+  position: absolute;
+  border-left: 1px solid #333;
+  height: 1em;
+  top: -1em;
+  right: 1em;
+}
+
+.tick-marks {
+  position: absolute;
+  z-index: -1;
+  margin-top: 5px;
+}
+
+legend .color-sample {
+  display: block;
+  float: left;
+  width: 1em;
+  height: 1em;
+  border: 2px solid;
+  border-radius: 0.5em;
+  margin-right: 0.5em;
+}
+
+.legend {
+  width: 10em;
+}
+
+.legend .title {
+  display: block;
+  margin-bottom: 0.5em;
+  line-height: 1.2em;
+  padding: 0 0.3em;
+}
+
+.legend .color-sample {
+  display: block;
+  float: left;
+  width: 1em;
+  height: 1em;
+  border: 2px solid;
+  border-radius: 0.5em;
+  margin-right: 0.5em;
+}
+
+#line1-legend {
+  border-color: rgba(220, 220, 220, 0.5);
+  background-color: #bdbdbd;
+}
+
+#line2-legend {
+  border-color: rgba(151, 187, 205, 0.5);
+  background-color: #90caf9;
+}
+
+.equation-text {
+  font-size: 15px;
+}
+
+.equation-line {
+  position: relative;
+}
+
+.equation-line:hover {
+  background-color: #e0e0e0;
+}
+
+.equation-line-selected {
+  background-color: #bdbdbd;
+}
+
+.table-row-selected, .table-row-selected td input {
+  background-color: #e0e0e0 !important;
+  color: #000;
+}
+
+.form-control[disabled] {
+  background-color: inherit;
+}
+
+.panel-body {
+  position: relative;
+}
+
+#crit {
+  position: relative;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #03a9f4;
+  border-color: #0288d1;
+}
+
+.btn-info:hover {
+  background-color: #0288d1;
+  border-color: #0277bd;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  user-select: none;
+}

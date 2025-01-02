@@ -1,0 +1,141 @@
+/* Documentation Styles */
+
+/* Root Variables */
+:root {
+    --primary-color: #7E1891;    /* Deep Purple */
+    --accent-color: #E73879;     /* Pinkish-Red */
+    --secondary-color: #FCC737;  /* Bold Yellow */
+    --highlight-color: #F26B0F;  /* Rich Orange */
+    --text-color: #2b2b2b;
+    --light-text-color: #7f8c8d;
+    --font-family: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Documentation Container */
+.container_docs {
+    height: auto;
+    padding: 50px;
+    text-align: center;
+    /* Gradient background using secondary-color (yellow) and highlight-color (orange) */
+    background: linear-gradient(to bottom right, var(--secondary-color), var(--highlight-color));
+    border-radius: var(--border-radius);
+    width: 80%;
+    margin: 50px auto 10px auto;
+
+    /* Subtle default shadow and smooth transitions */
+    box-shadow: var(--box-shadow);
+    transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+}
+
+.container_docs h3 {
+    font-size: 36px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+/* Decorative underline for h3 */
+.container_docs h3::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.container_docs p {
+    margin-left: 5px;
+    text-align: left;
+    margin-top: 15px;
+    font-size: 1rem;
+    padding-bottom: 50px;
+    line-height: 1.8;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 15px auto;
+}
+
+.container_docs li {
+    text-align: left;
+    line-height: 1.8;
+    margin-left: 15px;
+    color: var(--text-color);
+}
+
+.special li {
+    line-height: 1.8;
+    padding-top: 20px;
+    color: var(--text-color);
+}
+
+.container_docs strong {
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+/* On hover, increase shadow and slightly scale the container for a subtle "lift" effect */
+.container_docs:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Documentation Section Headings */
+.documentation h2 {
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+/* Decorative underline for h2 */
+.documentation h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.documentation ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    text-align: left;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1rem;
+}
+
+.documentation ul li {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Make the bullet stand out with the accent color */
+.documentation ul li::marker {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.documentation ul li strong {
+    color: var(--accent-color);
+}
